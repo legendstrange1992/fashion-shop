@@ -1,4 +1,4 @@
-<?php include "lib/database.php"; ?>
+<?php include "../lib/database.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,23 +39,23 @@
 <body class="animsition">
 	
 	<!-- Header -->
-	<?php include "layout/header.php"; ?>
+	<?php include "../layout/header.php"; ?>
 
 	<!-- Sidebar -->
-	<?php include "layout/sidebar.php"; ?>
+	<?php include "../layout/sidebar.php"; ?>
 
 
 	<!-- Cart -->
-	<?php include "layout/cart.php"; ?>
+	<?php include "../layout/cart.php"; ?>
 
 
 
 	<!-- Slider -->
-	<?php include "layout/slider.php"; ?>
+	<?php include "../layout/slider.php"; ?>
 
 
 	<!-- Banner -->
-	<?php include "layout/banner.php"; ?>
+	<?php include "../layout/banner.php"; ?>
 
 
 	<!-- Product -->
@@ -121,7 +121,7 @@
 
 
 	<!-- Footer -->
-	<?php include "layout/footer.php"; ?>
+	<?php include "../layout/footer.php"; ?>
 
 
 	<!-- Back to top -->
@@ -132,7 +132,7 @@
 	</div>
 
 	<!-- Modal1 -->
-	<?php include "layout/modal1.php"; ?>
+	<?php include "../layout/modal1.php"; ?>
 
 <!--===============================================================================================-->	
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
