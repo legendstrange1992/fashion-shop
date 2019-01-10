@@ -3787,3 +3787,33 @@ RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE
 .select2-selection__rendered {
   background: #fff !important;
 }
+@media (max-width: 768px) {
+  .how-pos3-parent {
+    height: 1150px;
+  }
+}
+@media (max-width: 668px) {
+  .how-pos3-parent {
+    height: 1100px;
+  }
+}
+@media (max-width: 650px) {
+  .how-pos3-parent {
+    height: 1050px;
+  }
+}
+@media (max-width: 568px) {
+  .how-pos3-parent {
+    height: 1000px;
+  }
+}
+@media (max-width: 480px) {
+  .how-pos3-parent {
+    height: 950px;
+  }
+}
+@media (max-width: 320px) {
+  .how-pos3-parent {
+    height: 900px;
+  }
+}
