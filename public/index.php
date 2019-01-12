@@ -35,9 +35,15 @@
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<script src="js/jquery-3.3.1.js"></script>
+<<<<<<< HEAD
 	<script src="http://localhost:3000/socket.io/socket.io.js"></script>
 	<script>
 		var socket = io('http://localhost:3000');
+=======
+	<script src="https://server-detai-php.herokuapp.com/socket.io/socket.io.js"></script>
+	<script>
+		var socket = io('https://server-detai-php.herokuapp.com');
+>>>>>>> 230ddaeeeaa53c48f3d574a038232c2513f9e742
 	</script>
 <!--===============================================================================================-->
 </head>
