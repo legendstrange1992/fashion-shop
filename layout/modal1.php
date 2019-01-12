@@ -14,16 +14,8 @@
 								<div class="wrap-slick3-dots"></div>
 								<div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
 
-								<div class="slick3 gallery-lb">
-									<div class="item-slick3" data-thumb="images/product-detail-01.jpg">
-										<div class="wrap-pic-w pos-relative">
-											<img src="images/product-detail-01.jpg" alt="IMG-PRODUCT">
-
-											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-detail-01.jpg">
-												<i class="fa fa-expand"></i>
-											</a>
-										</div>
-									</div>
+								<div class="wrap-pic-w pos-relative">
+									<img class="img_modal2" alt="IMG-PRODUCT">
 								</div>
 							</div>
 						</div>
@@ -31,16 +23,17 @@
 					
 					<div class="col-md-6 col-lg-5 p-b-30">
 						<div class="p-r-50 p-t-5 p-lr-0-lg">
-							<h4 class="mtext-105 cl2 js-name-detail p-b-14">
+							<h4 class="mtext-105 cl2 js-name-detail p-b-14 tensanpham_modal">
 								Lightweight Jacket
 							</h4>
 
-							<span class="mtext-106 cl2">
+							<span class="mtext-106 cl2 gia_modal">
 								$58.79
 							</span>
 
-							<p class="stext-102 cl3 p-t-23">
-								Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.
+							<p class="stext-102 cl3 p-t-23 chitiet_sanpham_modal">
+							Simple design but lines. 100% elastic cotton 4-dimensional cotton fabric. Soft, smooth, cool sweat absorbent,
+							 Laundry washing machine are comfortable.
 							</p>
 							
 							<!--  -->
@@ -52,12 +45,11 @@
 
 									<div class="size-204 respon6-next">
 										<div class="rs1-select2 bor8 bg0">
-											<select class="js-select2" name="time">
-												<option>Choose an option</option>
-												<option>Size S</option>
-												<option>Size M</option>
-												<option>Size L</option>
-												<option>Size XL</option>
+											<select class="js-select2" name="time" id="size">
+												<option>S</option>
+												<option>M</option>
+												<option>L</option>
+												<option>XL</option>
 											</select>
 											<div class="dropDownSelect2"></div>
 										</div>
@@ -71,8 +63,7 @@
 
 									<div class="size-204 respon6-next">
 										<div class="rs1-select2 bor8 bg0">
-											<select class="js-select2" name="time">
-												<option>Choose an option</option>
+											<select class="js-select2" name="time" id="color">
 												<option>Red</option>
 												<option>Blue</option>
 												<option>White</option>
@@ -86,31 +77,29 @@
 								<div class="flex-w flex-r-m p-b-10">
 									<div class="size-204 flex-w flex-m respon6-next">
 										<div class="wrap-num-product flex-w m-r-20 m-tb-10">
-											<div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
+											<div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m giam_soluong_modal">
 												<i class="fs-16 zmdi zmdi-minus"></i>
 											</div>
 
-											<input class="mtext-104 cl3 txt-center num-product" type="number" name="num-product" value="1">
+											<input class="mtext-104 cl3 txt-center num-product soluong_modal" type="number" name="num-product" value="1">
 
-											<div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
+											<div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m tang_soluong_modal">
 												<i class="fs-16 zmdi zmdi-plus"></i>
 											</div>
 										</div>
-
-										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
-											Add to cart
-										</button>
 									</div>
+									<div class="size-204 flex-w flex-m respon6-next">
+									<button data-id_addtocart="-1"  class="flex-c-m stext-101 cl0 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail addtocart" style="margin-top:10px;width:140px;height: 46px;">
+										Add to cart
+									</button>
+									</div>
+									
 								</div>	
 							</div>
 
 							<!--  -->
 							<div class="flex-w flex-m p-l-100 p-t-40 respon7">
-								<div class="flex-m bor9 p-r-10 m-r-11">
-									<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 js-addwish-detail tooltip100" data-tooltip="Add to Wishlist">
-										<i class="zmdi zmdi-favorite"></i>
-									</a>
-								</div>
+								
 
 								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Facebook">
 									<i class="fa fa-facebook"></i>
@@ -130,3 +119,33 @@
 			</div>
 		</div>
 	</div>
+	<script>
+		$('.addtocart').on('click',function(){
+			var id = $(this).attr('data-id_addtocart');
+			var size = $('#size').val();
+			var color = $('#color').val();
+			var soluong = $('.soluong_modal').val();
+			var style = color+"-"+size;
+			$('.soluong_modal').val(1);
+			socket.emit('add_to_card',{id:id,style:style,soluong:soluong});
+			$.get("../lib/xuly_addtocart.php",{size:size,color:color,soluong:soluong,id:id},function(data){
+			
+			});
+		});
+		$('.tang_soluong_modal').on('click',function(){
+			var sl = Number($('.soluong_modal').val());
+			sl++;
+			if(sl<=10){
+				$('.soluong_modal').val(sl);
+			}
+			
+		})
+		$('.giam_soluong_modal').on('click',function(){
+			var sl = Number($('.soluong_modal').val());
+			sl--;
+			if(sl>0){
+				$('.soluong_modal').val(sl);
+			}
+			
+		})
+	</script>

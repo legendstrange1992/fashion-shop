@@ -34,6 +34,11 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script src="js/jquery-3.3.1.js"></script>
+	<script src="https://server-detai-php.herokuapp.com/socket.io/socket.io.js"></script>
+	<script>
+		var socket = io('https://server-detai-php.herokuapp.com');
+	</script>
 <!--===============================================================================================-->
 </head>
 <body class="animsition">
@@ -82,7 +87,7 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/<?php echo $row['hinh']; ?>" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+							<a data-id_sanpham="<?php echo $row['id_sanpham'] ?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1 quickview">
 								Quick View
 							</a>
 						</div>
@@ -108,8 +113,7 @@
 					</div>
 				</div>
 				<?php  }?>
-			</div>
-
+			</div>		
 			<!-- Load more -->
 			<div class="flex-c-m flex-w w-full p-t-45">
 				<a class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04">
@@ -143,6 +147,7 @@
 	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 <!--===============================================================================================-->
 	<script src="vendor/select2/select2.min.js"></script>
+	<script src="js/socketio.js"></script>
 	<script>
 		$(".js-select2").each(function(){
 			$(this).select2({
@@ -234,6 +239,6 @@
 	</script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
-
+	
 </body>
 </html>
