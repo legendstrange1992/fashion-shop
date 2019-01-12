@@ -32,8 +32,17 @@
 							</span>
 
 							<p class="stext-102 cl3 p-t-23 chitiet_sanpham_modal">
+<<<<<<< HEAD
 							Simple design but lines. 100% elastic cotton 4-dimensional cotton fabric. Soft, smooth, cool sweat absorbent,
 							 Laundry washing machine are comfortable.
+=======
+<<<<<<< HEAD
+							Simple design but lines. 100% elastic cotton 4-dimensional cotton fabric. Soft, smooth, cool sweat absorbent,
+							 Laundry washing machine are comfortable.
+=======
+							Simple design but lines. 100% elastic cotton 4-dimensional cotton fabric. Soft, smooth, cool sweat absorbent, Laundry washing machine are comfortable.
+>>>>>>> 230ddaeeeaa53c48f3d574a038232c2513f9e742
+>>>>>>> a0ae73fb26e579c6501968f26ec4b6624351417c
 							</p>
 							
 							<!--  -->
@@ -45,11 +54,25 @@
 
 									<div class="size-204 respon6-next">
 										<div class="rs1-select2 bor8 bg0">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> a0ae73fb26e579c6501968f26ec4b6624351417c
 											<select class="js-select2" name="time" id="size">
 												<option>S</option>
 												<option>M</option>
 												<option>L</option>
 												<option>XL</option>
+<<<<<<< HEAD
+=======
+=======
+											<select class="js-select2" name="time">
+												<option>Size S</option>
+												<option>Size M</option>
+												<option>Size L</option>
+												<option>Size XL</option>
+>>>>>>> 230ddaeeeaa53c48f3d574a038232c2513f9e742
+>>>>>>> a0ae73fb26e579c6501968f26ec4b6624351417c
 											</select>
 											<div class="dropDownSelect2"></div>
 										</div>
@@ -63,7 +86,15 @@
 
 									<div class="size-204 respon6-next">
 										<div class="rs1-select2 bor8 bg0">
+<<<<<<< HEAD
 											<select class="js-select2" name="time" id="color">
+=======
+<<<<<<< HEAD
+											<select class="js-select2" name="time" id="color">
+=======
+											<select class="js-select2" name="time">
+>>>>>>> 230ddaeeeaa53c48f3d574a038232c2513f9e742
+>>>>>>> a0ae73fb26e579c6501968f26ec4b6624351417c
 												<option>Red</option>
 												<option>Blue</option>
 												<option>White</option>
@@ -89,7 +120,15 @@
 										</div>
 									</div>
 									<div class="size-204 flex-w flex-m respon6-next">
+<<<<<<< HEAD
 									<button data-id_addtocart="-1"  class="flex-c-m stext-101 cl0 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail addtocart" style="margin-top:10px;width:140px;height: 46px;">
+=======
+<<<<<<< HEAD
+									<button data-id_addtocart="-1"  class="flex-c-m stext-101 cl0 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail addtocart" style="margin-top:10px;width:140px;height: 46px;">
+=======
+									<button  class="flex-c-m stext-101 cl0 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" style="margin-top:10px;width:140px;height: 46px;">
+>>>>>>> 230ddaeeeaa53c48f3d574a038232c2513f9e742
+>>>>>>> a0ae73fb26e579c6501968f26ec4b6624351417c
 										Add to cart
 									</button>
 									</div>
