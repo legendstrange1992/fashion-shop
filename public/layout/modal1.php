@@ -128,7 +128,7 @@
 			var style = color+"-"+size;
 			$('.soluong_modal').val(1);
 			socket.emit('add_to_card',{id:id,style:style,soluong:soluong});
-			$.get("../lib/xuly_addtocart.php",{size:size,color:color,soluong:soluong,id:id},function(data){
+			$.get("lib/xuly_addtocart.php",{size:size,color:color,soluong:soluong,id:id},function(data){
 			
 			});
 		});

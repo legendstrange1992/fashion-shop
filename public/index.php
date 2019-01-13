@@ -1,4 +1,5 @@
 <?php include "lib/database.php"; ?>
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,7 +53,6 @@
 
 	<!-- Cart -->
 	<?php include "layout/cart.php"; ?>
-
 
 
 	<!-- Slider -->
@@ -147,7 +147,7 @@
 	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 <!--===============================================================================================-->
 	<script src="vendor/select2/select2.min.js"></script>
-	<script src="js/socketio.js"></script>
+	
 	<script>
 		$(".js-select2").each(function(){
 			$(this).select2({
@@ -239,6 +239,6 @@
 	</script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
-	
+	<script src="js/socketio.js"></script>
 </body>
 </html>
