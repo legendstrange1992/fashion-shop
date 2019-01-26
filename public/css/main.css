@@ -1984,6 +1984,7 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 .show-modal1 {
+  transition: 1s;
   visibility: visible;
   opacity: 1;
 }

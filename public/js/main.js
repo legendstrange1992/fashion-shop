@@ -259,16 +259,19 @@
     
     /*==================================================================
     [ Show modal1 ]*/
-    $('.js-show-modal1').on('click',function(e){
+    $('.quickview').on('click',function(e){
         e.preventDefault();
-        $('.js-modal1').addClass('show-modal1');
+        var id = $(this).attr('data-id_sanpham');
+        $('.js_modal_'+id).addClass('show-modal1');
     });
 
     $('.js-hide-modal1').on('click',function(){
-        $('.js-modal1').removeClass('show-modal1');
+        var id = $(this).attr('data-id');
+        $('.js_modal_'+id).removeClass('show-modal1');
+        $('.soluong_modal'+id).val(1);
     });
     $('body').on('click','.swal-button--confirm',function(){
-        $('.js-modal1').removeClass('show-modal1');
+        $('.js_modal_delete').removeClass('show-modal1');
     });
 
 

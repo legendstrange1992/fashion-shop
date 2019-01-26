@@ -1,18 +1,6 @@
 $(function(){
     
-    socket.on('server_send_item_sanpham',function(data){
-        $('.tensanpham_modal').text(data[0].tensanpham);
-        $('.chitiet_sanpham_modal').text(data[0].chitiet_sanpham);
-        $('.gia_modal').text('$ '+data[0].dongia);
-        $('.img_modal2').attr('src','images/'+data[0].hinh);
-        
-    });
-    $('.quickview').click(function(){
-        var id = $(this).attr('data-id_sanpham');
-        $('.addtocart').attr('data-id_addtocart',id);
-        socket.emit('client_send_id_sanpham',id);
-        
-    });
+    
     socket.on('server_send_cart_header',function(data){
         $('.soluong_header').attr('data-notify',data.length);
         $('.soluong_header_mobile').attr('data-notify',data.length);
