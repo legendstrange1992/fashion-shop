@@ -5,35 +5,35 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="images/icons/favicon.png"/>
+	<link rel="icon" type="image/png" href="{{asset('images/icons/favicon.png')}}"/>
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="{{asset('fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+	<link rel="stylesheet" type="text/css" href="{{asset('fonts/iconic/css/material-design-iconic-font.min.css')}}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/linearicons-v1.0.0/icon-font.min.css">
+	<link rel="stylesheet" type="text/css" href="{{asset('fonts/linearicons-v1.0.0/icon-font.min.css')}}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="{{asset('vendor/animate/animate.css')}}">
 <!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="{{asset('vendor/css-hamburgers/hamburgers.min.css')}}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="{{asset('vendor/select2/select2.min.css')}}">
 <!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+	<link rel="stylesheet" type="text/css" href="{{asset('vendor/daterangepicker/daterangepicker.css')}}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/slick/slick.css">
+	<link rel="stylesheet" type="text/css" href="{{asset('vendor/slick/slick.css')}}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/MagnificPopup/magnific-popup.css">
+	<link rel="stylesheet" type="text/css" href="{{asset('vendor/MagnificPopup/magnific-popup.css')}}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+	<link rel="stylesheet" type="text/css" href="{{asset('vendor/perfect-scrollbar/perfect-scrollbar.css')}}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<script src='js/jquery-3.3.1.js'></script>
+	<link rel="stylesheet" type="text/css" href="{{asset('css/util.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('css/main.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+	<script src="{{asset('js/jquery-3.3.1.js')}}"></script>
 <!--===============================================================================================-->
 </head>
 <body class="animsition">
@@ -45,8 +45,8 @@
 				<nav class="limiter-menu-desktop p-l-45">
 					
 					<!-- Logo desktop -->		
-					<a href="#" class="logo">
-						<img src="images/icons/logo-01.png" alt="IMG-LOGO">
+					<a href="{{route('trangchu')}}" class="logo">
+						<img src="{{asset('images/icons/logo-01.png')}}" alt="IMG-LOGO">
 					</a>
 
 					<!-- Menu desktop -->
@@ -119,7 +119,7 @@
 		<div class="wrap-header-mobile">
 			<!-- Logo moblie -->		
 			<div class="logo-mobile">
-				<a href="index.html"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>
+				<a href="{{route('trangchu')}}"><img src="{{asset('images/icons/logo-01.png')}}" alt="IMG-LOGO"></a>
 			</div>
 
 			<!-- Icon header -->
@@ -194,7 +194,7 @@
 		<div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
 			<div class="container-search-header">
 				<button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
-					<img src="images/icons/icon-close2.png" alt="CLOSE">
+					<img src="{{asset('images/icons/icon-close2.png')}}" alt="CLOSE">
 				</button>
 
 				<form class="wrap-search-header flex-w p-l-15">
@@ -265,56 +265,56 @@
 					<div class="flex-w flex-sb p-t-36 gallery-lb">
 						<!-- item gallery sidebar -->
 						<div class="wrap-item-gallery m-b-10">
-							<a class="item-gallery bg-img1" href="images/gallery-01.jpg" data-lightbox="gallery" 
-							style="background-image: url('images/gallery-01.jpg');"></a>
+							<a class="item-gallery bg-img1" href="{{asset('images')}}/gallery-01.jpg" data-lightbox="gallery" 
+							style="background-image: url('{{asset('images')}}/gallery-01.jpg');"></a>
 						</div>
 
 						<!-- item gallery sidebar -->
 						<div class="wrap-item-gallery m-b-10">
 							<a class="item-gallery bg-img1" href="images/gallery-02.jpg" data-lightbox="gallery" 
-							style="background-image: url('images/gallery-02.jpg');"></a>
+							style="background-image: url('{{asset('images')}}/gallery-02.jpg');"></a>
 						</div>
 
 						<!-- item gallery sidebar -->
 						<div class="wrap-item-gallery m-b-10">
-							<a class="item-gallery bg-img1" href="images/gallery-03.jpg" data-lightbox="gallery" 
-							style="background-image: url('images/gallery-03.jpg');"></a>
+							<a class="item-gallery bg-img1" href="{{asset('images')}}/gallery-03.jpg" data-lightbox="gallery" 
+							style="background-image: url('{{asset('images')}}/gallery-03.jpg');"></a>
 						</div>
 
 						<!-- item gallery sidebar -->
 						<div class="wrap-item-gallery m-b-10">
-							<a class="item-gallery bg-img1" href="images/gallery-04.jpg" data-lightbox="gallery" 
-							style="background-image: url('images/gallery-04.jpg');"></a>
+							<a class="item-gallery bg-img1" href="{{asset('images')}}/gallery-04.jpg" data-lightbox="gallery" 
+							style="background-image: url('{{asset('images')}}/gallery-04.jpg');"></a>
 						</div>
 
 						<!-- item gallery sidebar -->
 						<div class="wrap-item-gallery m-b-10">
-							<a class="item-gallery bg-img1" href="images/gallery-05.jpg" data-lightbox="gallery" 
-							style="background-image: url('images/gallery-05.jpg');"></a>
+							<a class="item-gallery bg-img1" href="{{asset('images')}}/gallery-05.jpg" data-lightbox="gallery" 
+							style="background-image: url('{{asset('images')}}/gallery-05.jpg');"></a>
 						</div>
 
 						<!-- item gallery sidebar -->
 						<div class="wrap-item-gallery m-b-10">
-							<a class="item-gallery bg-img1" href="images/gallery-06.jpg" data-lightbox="gallery" 
-							style="background-image: url('images/gallery-06.jpg');"></a>
+							<a class="item-gallery bg-img1" href="{{asset('images')}}/gallery-06.jpg" data-lightbox="gallery" 
+							style="background-image: url('{{asset('images')}}/gallery-06.jpg');"></a>
 						</div>
 
 						<!-- item gallery sidebar -->
 						<div class="wrap-item-gallery m-b-10">
-							<a class="item-gallery bg-img1" href="images/gallery-07.jpg" data-lightbox="gallery" 
-							style="background-image: url('images/gallery-07.jpg');"></a>
+							<a class="item-gallery bg-img1" href="{{asset('images')}}/gallery-07.jpg" data-lightbox="gallery" 
+							style="background-image: url('{{asset('images')}}/gallery-07.jpg');"></a>
 						</div>
 
 						<!-- item gallery sidebar -->
 						<div class="wrap-item-gallery m-b-10">
-							<a class="item-gallery bg-img1" href="images/gallery-08.jpg" data-lightbox="gallery" 
-							style="background-image: url('images/gallery-08.jpg');"></a>
+							<a class="item-gallery bg-img1" href="{{asset('images')}}/gallery-08.jpg" data-lightbox="gallery" 
+							style="background-image: url('{{asset('images')}}/gallery-08.jpg');"></a>
 						</div>
 
 						<!-- item gallery sidebar -->
 						<div class="wrap-item-gallery m-b-10">
-							<a class="item-gallery bg-img1" href="images/gallery-09.jpg" data-lightbox="gallery" 
-							style="background-image: url('images/gallery-09.jpg');"></a>
+							<a class="item-gallery bg-img1" href="{{asset('images')}}/gallery-09.jpg" data-lightbox="gallery" 
+							style="background-image: url('{{asset('images')}}/gallery-09.jpg');"></a>
 						</div>
 					</div>
 				</div>
@@ -369,7 +369,7 @@
 					 		?>
 							<li class="header-cart-item flex-w flex-t m-b-12">
 								<div class="header-cart-item-img">
-									<img src="images/<?php echo $hinh; ?>" alt="IMG">
+									<img src="{{asset('images')}}/<?php echo $hinh;?>" alt="IMG">
 								</div>
 
 								<div class="header-cart-item-txt p-t-8">
@@ -378,7 +378,7 @@
 									</a>
 
 									<span class="header-cart-item-info">
-										<?php echo $soluong.'x $'.$dongia ?>
+										<?php echo $soluong.' x $'.$dongia ?>
 									</span>
 								</div>
 							</li>
@@ -391,11 +391,11 @@
 				
 				<div class="w-full">
 					<div class="header-cart-total w-full p-tb-40">
-						Total: <?php if(isset($tongtien)) echo '$'.$tongtien; ?>
+						Total: <?php if(isset($tongtien)) echo '$'.number_format($tongtien) ?>
 					</div>
 
 					<div class="header-cart-buttons flex-w w-full">
-						<a href="shoping-cart.html" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
+						<a href="{{route('cart')}}" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
 							View Cart
 						</a>
 
@@ -424,7 +424,7 @@
 
 	<!-- Product -->
 	<section class="sec-product bg0 p-t-100 p-b-50">
-		@yield('product')
+	@yield('product')
 	</section>
 
 
@@ -543,23 +543,23 @@
 			<div class="p-t-40">
 				<div class="flex-c-m flex-w p-b-18">
 					<a href="#" class="m-all-1">
-						<img src="images/icons/icon-pay-01.png" alt="ICON-PAY">
+						<img src="{{asset('images')}}/icons/icon-pay-01.png" alt="ICON-PAY">
 					</a>
 
 					<a href="#" class="m-all-1">
-						<img src="images/icons/icon-pay-02.png" alt="ICON-PAY">
+						<img src="{{asset('images')}}/icons/icon-pay-02.png" alt="ICON-PAY">
 					</a>
 
 					<a href="#" class="m-all-1">
-						<img src="images/icons/icon-pay-03.png" alt="ICON-PAY">
+						<img src="{{asset('images')}}/icons/icon-pay-03.png" alt="ICON-PAY">
 					</a>
 
 					<a href="#" class="m-all-1">
-						<img src="images/icons/icon-pay-04.png" alt="ICON-PAY">
+						<img src="{{asset('images')}}/icons/icon-pay-04.png" alt="ICON-PAY">
 					</a>
 
 					<a href="#" class="m-all-1">
-						<img src="images/icons/icon-pay-05.png" alt="ICON-PAY">
+						<img src="{{asset('images')}}/icons/icon-pay-05.png" alt="ICON-PAY">
 					</a>
 				</div>
 
@@ -583,12 +583,12 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 	
 <!--===============================================================================================-->
-	<script src="vendor/animsition/js/animsition.min.js"></script>
+	<script src="{{asset('vendor/animsition/js/animsition.min.js')}}"></script>
 <!--===============================================================================================-->
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="{{asset('vendor/bootstrap/js/popper.js')}}"></script>
+	<script src="{{asset('vendor/bootstrap/js/bootstrap.min.js')}}"></script>
 <!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
+	<script src="{{asset('vendor/select2/select2.min.js')}}"></script>
 	
 	<script>
 		$(".js-select2").each(function(){
@@ -599,18 +599,18 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 		})
 	</script>
 <!--===============================================================================================-->
-	<script src="vendor/daterangepicker/moment.min.js"></script>
-	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+	<script src="{{asset('vendor/daterangepicker/moment.min.js')}}"></script>
+	<script src="{{asset('vendor/daterangepicker/daterangepicker.js')}}"></script>
 <!--===============================================================================================-->
-	<script src="vendor/slick/slick.min.js"></script>
-	<script src="js/slick-custom.js"></script>
+	<script src="{{asset('vendor/slick/slick.min.js')}}"></script>
+	<script src="{{asset('js/slick-custom.js')}}"></script>
 <!--===============================================================================================-->
-	<script src="vendor/parallax100/parallax100.js"></script>
+	<script src="{{asset('vendor/parallax100/parallax100.js')}}"></script>
 	<script>
         $('.parallax100').parallax100();
 	</script>
 <!--===============================================================================================-->
-	<script src="vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
+	<script src="{{asset('vendor/MagnificPopup/jquery.magnific-popup.min.js') }}"></script>
 	<script>
 		$('.gallery-lb').each(function() { // the containers for all your galleries
 			$(this).magnificPopup({
@@ -624,9 +624,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 		});
 	</script>
 <!--===============================================================================================-->
-	<script src="vendor/isotope/isotope.pkgd.min.js"></script>
+	<script src="{{asset('vendor/isotope/isotope.pkgd.min.js') }}"></script>
 <!--===============================================================================================-->
-	<script src="vendor/sweetalert/sweetalert.min.js"></script>
+	<script src="{{asset('vendor/sweetalert/sweetalert.min.js') }}"></script>
 	<script>
 		$('.js-addwish-b2').on('click', function(e){
 			e.preventDefault();
@@ -663,7 +663,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 		});
 	</script>
 <!--===============================================================================================-->
-	<script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+	<script src="{{asset('vendor/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
 	<script>
 		$('.js-pscroll').each(function(){
 			$(this).css('position','relative');
@@ -680,7 +680,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 		});
 	</script>
 <!--===============================================================================================-->
-	<script src="js/main.js"></script>
-	<script src='js/giohang.js'></script>
+	<script src="{{asset('js/main.js') }}"></script>
+	<script src="{{asset('js/giohang.js') }}"></script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 <?php
 
 
-Route::get('/','Mycontroller@index');
+Route::get('/','Mycontroller@index')->name('trangchu');
 
-Route::get('tang-san-pham/{id}/{sl}/{color}/{size}','Mycontroller@tangsoluong');
+Route::get('add-to-cart/{id}/{sl}/{color}/{size}','Cartcontroller@addtocard');
+Route::get('cart',['as'=>'cart','uses'=>'Cartcontroller@cart']);

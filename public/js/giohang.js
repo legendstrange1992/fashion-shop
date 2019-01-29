@@ -17,44 +17,14 @@ $(function(){
         var color = $('.color_'+id).val();
         var size  = $('.size_'+id).val();
         $.ajax({
-            url:'index.php/tang-san-pham/'+id+'/'+sl+'/'+color+'/'+size,
+            url:'index.php/add-to-cart/'+id+'/'+sl+'/'+color+'/'+size,
             success:function(data){
-                console.log(data);
-                var s = '';
-                var tongtien = 0;
-                Object.entries(data).forEach(([key, val]) => {
-                    var tensanpham = '';
-                    var dongia = 0;
-                    var tongsoluong = 0;
-                    var hinh = '';
-                    Object.entries(val).forEach(([k,v])=>{
-                        tensanpham = v.tensanpham;
-                        dongia = v.dongia;
-                        hinh = v.hinh;
-                        tongsoluong += v.soluong;
-                    });
-                    s+= "<li class='header-cart-item flex-w flex-t m-b-12'>"+
-                            "<div class='header-cart-item-img'>"+
-                                "<img src='images/"+hinh+"' alt='IMG'>"+
-                            "</div>"+
+                
+                $('.header-cart-content').html(data['cart']);
 
-                            "<div class='header-cart-item-txt p-t-8'>"+
-                                "<a href='#' class='header-cart-item-name m-b-18 hov-cl1 trans-04'>"+
-                                    tensanpham +
-                                "</a>"+
+                $('.soluong_cart').attr('data-notify',data['count']);
+                $('.soluong_cart_mobile').attr('data-notify',data['count']);
 
-                                "<span class='header-cart-item-info'>"+
-                                     tongsoluong +" x $" + dongia +
-                                "</span>"+
-                            "</div>"+
-                        "</li>";
-                    tongtien += tongsoluong * dongia;
-                });
-                var count= Object.keys(data).length;
-                $('.soluong_cart').attr('data-notify',count);
-                $('.soluong_cart_mobile').attr('data-notify',count);    
-                $('.header-cart-wrapitem').html(s);
-                $('.header-cart-total').html('Total : $'+tongtien);
                 $('.soluong_modal'+id).val(1);
             }
         });
