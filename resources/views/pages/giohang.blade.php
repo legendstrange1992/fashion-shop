@@ -57,9 +57,9 @@
 					</div>
 					<div class="one-eight text-center">
 						<div class="display-tc">
-                            <input type="button" value="+" class="form-control tang text-center" style="width:40px;">
-							<input type="text" id="quantity" name="quantity" class="form-control input-number text-center quantity" value="<?php echo $v['soluong']?>" style="width:40px;">
-                            <input type="button" value="-" class="form-control giam text-center" style="width:40px;">
+                            <input type="button" data-style='<?php echo $k?>' data-id='<?php echo $v['id']?>' value="+" class="form-control tang text-center" style="width:40px;">
+							<input type="text" id="quantity" name="quantity" class="form-control input-number text-center quantity soluong_<?php echo $v['id']?>_<?php echo $k?>" value="<?php echo $v['soluong']?>" style="width:40px;">
+                            <input type="button" data-style='<?php echo $k?>' data-id='<?php echo $v['id']?>' value="-" class="form-control giam text-center" style="width:40px;">
                         </div>
 					</div>
 					<div class="one-eight text-center">
@@ -79,8 +79,6 @@
 						</div>
 					</div>
 				</div>
-
-
                 <?php                                      
                         }
                     }

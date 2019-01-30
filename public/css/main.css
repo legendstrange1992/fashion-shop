@@ -335,6 +335,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   display: flex;
   align-items: center;
   background-color: transparent;
+  border-bottom: 1px solid  #e6e6e6;
 }
 
 

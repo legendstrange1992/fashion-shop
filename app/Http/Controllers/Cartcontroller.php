@@ -28,6 +28,7 @@ class Cartcontroller extends Controller
                 }
                 else{
                     $item = array(
+                    'id'=>$id,
                     'tensanpham'=>$data->tensanpham,
                     'dongia'=>$data->dongia,
                     'hinh'=>$data->hinh,
@@ -40,6 +41,7 @@ class Cartcontroller extends Controller
             else
             {
                 $item = array(
+                    'id'=>$id,
                     'tensanpham'=>$data->tensanpham,
                     'dongia'=>$data->dongia,
                     'hinh'=>$data->hinh,
@@ -51,6 +53,7 @@ class Cartcontroller extends Controller
         } 
         else{
             $item = array(
+                    'id'=>$id,
                     'tensanpham'=>$data->tensanpham,
                     'dongia'=>$data->dongia,
                     'hinh'=>$data->hinh,
@@ -108,6 +111,27 @@ class Cartcontroller extends Controller
         $count = count($cart);
         $data = ['cart'=>$s,'count'=>$count];
         return $data;
-        
-	}
+    }
+    public function tangsoluong($id,$style){
+        if(session()->has('giohang')){
+            $cart = session()->get('giohang');
+            $cart[$id][$style]["soluong"]++;
+            if($cart[$id][$style]["soluong"] > 10){
+                $cart[$id][$style]["soluong"] = 10;
+            }
+            session()->put('giohang',$cart);
+            return $cart[$id][$style]["soluong"];
+        }
+    }
+    public function giamsoluong($id,$style){
+        if(session()->has('giohang')){
+            $cart = session()->get('giohang');
+            $cart[$id][$style]["soluong"]--;
+            if($cart[$id][$style]["soluong"] == 0){
+                $cart[$id][$style]["soluong"] = 1;
+            }
+            session()->put('giohang',$cart);
+            return $cart[$id][$style]["soluong"];
+        }
+    }
 }
