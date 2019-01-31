@@ -27,24 +27,34 @@ $(function(){
         });
     });
     $('.tang').on('click',function(){
+        const JPY = value => currency(value, { precision: 0, symbol: '¥' });
         var id = $(this).attr('data-id');
         var style = $(this).attr('data-style');
+        var soluongmoi = $('.soluong_'+id+'_'+style).val();
+        soluongmoi = Number(soluongmoi) + 1;
+        if(soluongmoi > 10){soluongmoi = 10}
+        $('.soluong_'+id+'_'+style).val(soluongmoi);
         $.ajax({
             url:'tang-so-luong/'+id+'/'+style,
             success:function(data){
-                $('.soluong_'+id+'_'+style).val(data);
-                
+                $('.thanhtien_'+id+'_'+style).text('$ '+JPY(data.thanhtien).format());
+                $('.tongtien_giohang').text('$ '+ JPY(data.tongtien).format());
             }
         })
     });
     $('.giam').on('click',function(){
+        const JPY = value => currency(value, { precision: 0, symbol: '¥' });
         var id = $(this).attr('data-id');
         var style = $(this).attr('data-style');
+        var soluongmoi = $('.soluong_'+id+'_'+style).val();
+        soluongmoi = Number(soluongmoi) - 1;
+        if(soluongmoi < 1 ) {soluongmoi = 1};
+        $('.soluong_'+id+'_'+style).val(soluongmoi);
         $.ajax({
             url:'giam-so-luong/'+id+'/'+style,
             success:function(data){
-                $('.soluong_'+id+'_'+style).val(data);
-                
+                $('.thanhtien_'+id+'_'+style).text('$ '+JPY(data.thanhtien).format());
+                $('.tongtien_giohang').text('$ '+ JPY(data.tongtien).format());
             }
         })
     });

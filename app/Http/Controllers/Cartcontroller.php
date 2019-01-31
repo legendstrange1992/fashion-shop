@@ -95,7 +95,7 @@ class Cartcontroller extends Controller
         $s.="</ul>";
         $s.="<div class='w-full'>".
         "<div class='header-cart-total w-full p-tb-40'>".
-        "Total: $ ".$tongtien.
+        "Total: $ ".number_format($tongtien).
         "</div>".
 
         "<div class='header-cart-buttons flex-w w-full'>".
@@ -113,25 +113,37 @@ class Cartcontroller extends Controller
         return $data;
     }
     public function tangsoluong($id,$style){
-        if(session()->has('giohang')){
-            $cart = session()->get('giohang');
-            $cart[$id][$style]["soluong"]++;
-            if($cart[$id][$style]["soluong"] > 10){
-                $cart[$id][$style]["soluong"] = 10;
-            }
-            session()->put('giohang',$cart);
-            return $cart[$id][$style]["soluong"];
+        $cart = session()->get('giohang');
+        $cart[$id][$style]["soluong"]++;
+        if($cart[$id][$style]["soluong"] > 10){
+            $cart[$id][$style]["soluong"] = 10;
         }
+        session()->put('giohang',$cart);
+        $thanhtien = $cart[$id][$style]["soluong"] * $cart[$id][$style]["dongia"];
+        $tongtien = 0;
+        foreach($cart as $key => $value){
+            foreach($value as $k => $v){
+                $tongtien += $v['soluong']*$v['dongia']; 
+            } 
+        }
+        $data = ['thanhtien'=>$thanhtien,'tongtien'=>$tongtien];
+        return $data;
     }
     public function giamsoluong($id,$style){
-        if(session()->has('giohang')){
-            $cart = session()->get('giohang');
-            $cart[$id][$style]["soluong"]--;
-            if($cart[$id][$style]["soluong"] == 0){
-                $cart[$id][$style]["soluong"] = 1;
-            }
-            session()->put('giohang',$cart);
-            return $cart[$id][$style]["soluong"];
+        $cart = session()->get('giohang');
+        $cart[$id][$style]["soluong"]--;
+        if($cart[$id][$style]["soluong"] == 0){
+            $cart[$id][$style]["soluong"] = 1;
         }
+        session()->put('giohang',$cart);
+        $tongtien = 0;
+        foreach($cart as $key => $value){
+            foreach($value as $k => $v){
+                $tongtien += $v['soluong']*$v['dongia']; 
+            } 
+        }
+        $thanhtien = $cart[$id][$style]["soluong"] * $cart[$id][$style]["dongia"];
+        $data = ['thanhtien'=>$thanhtien,'tongtien'=>$tongtien];
+        return $data;
     }
 }
