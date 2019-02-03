@@ -78,18 +78,6 @@
 				</div>
 			</div>
 
-			<div class="flex-c-m h-full p-lr-10 bor5">
-				<div class="icon-header-item cl2 hov-cl1 trans-04 p-lr-11 icon-header-noti js-show-cart soluong_cart_mobile"
-					data-notify="<?php 
-					if(session()->has('giohang')){ 
-						echo count(session()->get('giohang'));
-					}
-					else{
-						echo 0;
-					} ?>">
-					<i class="zmdi zmdi-shopping-cart"></i>
-				</div>
-			</div>
 		</div>
 
 		<!-- Button show menu -->
