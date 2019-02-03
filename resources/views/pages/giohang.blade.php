@@ -271,19 +271,8 @@
 			<div class="col-md-10 col-md-offset-1">
 				<div class="total-wrap">
 					<div class="row">
-						<div class="col-md-8">
-							<form action="#">
-								<div class="row form-group">
-									<div class="col-md-9">
-										<input type="text" name="quantity" class="form-control input-number" placeholder="Your Coupon Number...">
-									</div>
-									<div class="col-md-3">
-										<input type="submit" value="Apply Coupon" class="btn btn-primary">
-									</div>
-								</div>
-							</form>
-						</div>
-						<div class="col-md-3 col-md-push-1 text-center">
+						
+						<div class="col-md-3 col-md-push-1 text-center total_mobile">
 							<div class="total">
 								<div class="sub">
 									<p><span>Subtotal:</span> <span>$0.00</span></p>
@@ -295,6 +284,24 @@
 								</div>
 							</div>
 						</div>
+						<div class="col-md-8" style='margin-bottom:20px;'>
+							<div class="row form-group row_form_group">
+								<div class="col-md-3">
+									<input type="submit" value="Apply Cart" class="btn btn-primary">
+								</div>
+							</div>
+							<div class="row form-group" style='float:left;margin-left:20px;'>
+								<div class="col-md-3">
+									<input type="submit" value="Apply Cart" class="btn btn-primary">
+								</div>
+							</div>
+							<div class="row form-group" style='float:left;margin-left:20px;'>
+								<div class="col-md-3">
+									<input type="submit" value="Apply Cart" class="btn btn-primary">
+								</div>
+							</div>
+						</div>
+
 					</div>
 				</div>
 			</div>
