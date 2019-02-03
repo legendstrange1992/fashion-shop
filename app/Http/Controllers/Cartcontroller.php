@@ -112,12 +112,9 @@ class Cartcontroller extends Controller
         $data = ['cart'=>$s,'count'=>$count];
         return $data;
     }
-    public function tangsoluong($id,$style){
+    public function update_soluong($id,$style,$soluongmoi){
         $cart = session()->get('giohang');
-        $cart[$id][$style]["soluong"]++;
-        if($cart[$id][$style]["soluong"] > 10){
-            $cart[$id][$style]["soluong"] = 10;
-        }
+        $cart[$id][$style]["soluong"] = $soluongmoi;
         session()->put('giohang',$cart);
         $thanhtien = $cart[$id][$style]["soluong"] * $cart[$id][$style]["dongia"];
         $tongtien = 0;
@@ -129,21 +126,5 @@ class Cartcontroller extends Controller
         $data = ['thanhtien'=>$thanhtien,'tongtien'=>$tongtien];
         return $data;
     }
-    public function giamsoluong($id,$style){
-        $cart = session()->get('giohang');
-        $cart[$id][$style]["soluong"]--;
-        if($cart[$id][$style]["soluong"] == 0){
-            $cart[$id][$style]["soluong"] = 1;
-        }
-        session()->put('giohang',$cart);
-        $tongtien = 0;
-        foreach($cart as $key => $value){
-            foreach($value as $k => $v){
-                $tongtien += $v['soluong']*$v['dongia']; 
-            } 
-        }
-        $thanhtien = $cart[$id][$style]["soluong"] * $cart[$id][$style]["dongia"];
-        $data = ['thanhtien'=>$thanhtien,'tongtien'=>$tongtien];
-        return $data;
-    }
+   
 }

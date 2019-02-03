@@ -2114,12 +2114,12 @@ input[type="text"] {
 
 .js .animate-box {
   opacity: 0; }
-.tang , .giam ,.quantity{
-  float:right;
-}
-.tang:hover ,.giam:hover{
-  cursor: pointer;
-}
+  .quantity{
+    cursor: pointer;
+  }
+  .quantity:hover{
+    box-shadow: 1px 1px 3px #4cae4c;
+  }
 @media screen and (max-width: 768px) {
   .product-cart .product-img{
     display: inline-block;

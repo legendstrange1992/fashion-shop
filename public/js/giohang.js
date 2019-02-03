@@ -1,4 +1,5 @@
 $(function(){
+    
     $('.giam_soluong_modal').on('click',function(){
         var id = $(this).attr('data-id');
         var sl = $('.soluong_modal'+id).val();
@@ -26,36 +27,33 @@ $(function(){
             }
         });
     });
-    $('.tang').on('click',function(){
+    $('.quantity').on('click',function(){
+        var id = $(this).attr('data-id');
+        var style = $(this).attr('data-style');
+        $('.soluongmoi_modal_'+id+'_'+style).val('');
+        $('.soluong_modal_'+id+'_'+style).addClass('show-modal-search');
+    });
+    $('.update_soluong').on('click',function(){
         const JPY = value => currency(value, { precision: 0, symbol: '¥' });
         var id = $(this).attr('data-id');
         var style = $(this).attr('data-style');
-        var soluongmoi = $('.soluong_'+id+'_'+style).val();
-        soluongmoi = Number(soluongmoi) + 1;
-        if(soluongmoi > 10){soluongmoi = 10}
+        var soluongcu = $('.soluong_'+id+'_'+style).val();
+        var soluongmoi = $('.soluongmoi_modal_'+id+'_'+style).val();
+        if(soluongmoi == ''){
+            soluongmoi = soluongcu;
+        }
+        if(soluongmoi > 100){ soluongmoi=100; }
+        if(soluongmoi < 1) { soluongcu = 1; }
+
         $('.soluong_'+id+'_'+style).val(soluongmoi);
+        $('.soluong_modal_'+id+'_'+style).removeClass('show-modal-search');
         $.ajax({
-            url:'tang-so-luong/'+id+'/'+style,
+            url:'update-quantity/'+id+'/'+style+'/'+soluongmoi,
             success:function(data){
                 $('.thanhtien_'+id+'_'+style).text('$ '+JPY(data.thanhtien).format());
                 $('.tongtien_giohang').text('$ '+ JPY(data.tongtien).format());
             }
         })
     });
-    $('.giam').on('click',function(){
-        const JPY = value => currency(value, { precision: 0, symbol: '¥' });
-        var id = $(this).attr('data-id');
-        var style = $(this).attr('data-style');
-        var soluongmoi = $('.soluong_'+id+'_'+style).val();
-        soluongmoi = Number(soluongmoi) - 1;
-        if(soluongmoi < 1 ) {soluongmoi = 1};
-        $('.soluong_'+id+'_'+style).val(soluongmoi);
-        $.ajax({
-            url:'giam-so-luong/'+id+'/'+style,
-            success:function(data){
-                $('.thanhtien_'+id+'_'+style).text('$ '+JPY(data.thanhtien).format());
-                $('.tongtien_giohang').text('$ '+ JPY(data.tongtien).format());
-            }
-        })
-    });
+    
 });

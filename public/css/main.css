@@ -3813,6 +3813,12 @@ RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE
   .how-pos3-parent {
     height: 950px;
   }
+  .wrap-search-header input {
+    font-size: 18px;
+  }
+  .cot_giohang{
+    padding-top: 10px;
+  }
 }
 @media (max-width: 320px) {
   .how-pos3-parent {

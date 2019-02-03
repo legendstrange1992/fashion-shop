@@ -183,12 +183,11 @@
 						<span>Product Details</span>
 					</div>
 					<div class="one-eight text-center">
-						<span>Quantity</span>
-					</div>
-					<div class="one-eight text-center">
 						<span>Price</span>
 					</div>
-					
+					<div class="one-eight text-center">
+						<span>Quantity</span>
+					</div>
 					<div class="one-eight text-center">
 						<span>Total</span>
 					</div>
@@ -196,7 +195,17 @@
 						<span>Remove</span>
 					</div>
                 </div>
-                
+				<script>
+					function isNumberKey(evt)
+					{
+					var charCode = (evt.which) ? evt.which : event.keyCode;
+					if(charCode == 59 || charCode == 46)
+						return true;
+					if (charCode > 31 && (charCode < 48 || charCode > 57))
+						return false;
+					return true;
+					}
+				</script>
                 <?php
 				$tongtien = 0;
                 if(isset($cart)){
@@ -213,27 +222,40 @@
 							<h3><?php echo $v['tensanpham'].' ('.$k.')'?></h3>
 						</div>
 					</div>
-					<div class="one-eight text-center">
-						<div class="display-tc">
-                            <input type="button" data-style='<?php echo $k?>' data-id='<?php echo $v['id']?>' value="+" class="form-control tang text-center" style="width:40px;">
-							<input type="text" id="quantity" name="quantity" class="form-control input-number text-center quantity soluong_<?php echo $v['id']?>_<?php echo $k?>" value="<?php echo $v['soluong']?>" style="width:40px;">
-                            <input type="button" data-style='<?php echo $k?>' data-id='<?php echo $v['id']?>' value="-" class="form-control giam text-center" style="width:40px;">
-                        </div>
-					</div>
-					<div class="one-eight text-center">
+					<div class="one-eight text-center cot_giohang">
 						<div class="display-tc">
 							<span class="price"><?php echo '$'.$v['dongia']?></span>
 						</div>
 					</div>
-					
 					<div class="one-eight text-center">
+						<div class="display-tc">
+							<input type="button"  id="quantity" name="quantity" class="form-control input-number text-center quantity soluong_<?php echo $v['id']?>_<?php echo $k?>"
+							value="<?php echo $v['soluong']?>" data-id="<?php echo $v['id']?>" data-style="<?php echo $k; ?>" style="width:40px;">
+                        </div>
+					</div>
+					<div class="one-eight text-center cot_giohang">
 						<div class="display-tc">
 							<span class="price thanhtien_<?php echo $v['id']?>_<?php echo $k?>">$<?php echo number_format($v['dongia']*$v['soluong'])?></span>
 						</div>
 					</div>
-					<div class="one-eight text-center">
+					<div class="one-eight text-center cot_giohang">
 						<div class="display-tc">
 							<a href="#" class="closed"></a>
+						</div>
+					</div>
+				</div>
+				<!-- Modal Search -->
+				<div class="modal-search-header flex-c-m trans-04 soluong_modal_<?php echo $v['id']?>_<?php echo $k?>">
+					<div class="container-search-header">
+						<button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
+							<img src="{{asset('images/icons/icon-close2.png')}}" alt="CLOSE">
+						</button>
+
+						<div class="wrap-search-header flex-w p-l-15">
+							<input class="plh3 soluongmoi_modal_<?php echo $v['id']; ?>_<?php echo $k; ?>" type="text" name="search" placeholder="Mời nhập số lượng (tối đa 100)" autocomplete="off" maxlength="3" onkeypress="return isNumberKey(event)">
+							<button class="flex-c-m trans-04 update_soluong" data-id="<?php echo $v['id']?>" data-style="<?php echo $k; ?>">
+								<i class="fas fa-arrow-alt-circle-right"></i>
+							</button>
 						</div>
 					</div>
 				</div>
