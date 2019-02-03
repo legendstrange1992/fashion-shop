@@ -228,8 +228,8 @@
 						</div>
 					</div>
 					<div class="one-eight text-center">
-						<div class="display-tc">
-							<input type="button"  id="quantity" name="quantity" class="form-control input-number text-center quantity soluong_<?php echo $v['id']?>_<?php echo $k?>"
+						<div class="display-tc" style='text-align: center;'>
+							<input type="button" id="quantity" name="quantity" class="form-control input-number text-center quantity soluong_<?php echo $v['id']?>_<?php echo $k?>"
 							value="<?php echo $v['soluong']?>" data-id="<?php echo $v['id']?>" data-style="<?php echo $k; ?>" style="width:40px;">
                         </div>
 					</div>

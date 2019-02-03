@@ -3793,6 +3793,9 @@ RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE
   .how-pos3-parent {
     height: 1150px;
   }
+  .wrap-search-header input {
+    font-size: 22px;
+  }
 }
 @media (max-width: 668px) {
   .how-pos3-parent {
@@ -3802,6 +3805,9 @@ RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE
 @media (max-width: 650px) {
   .how-pos3-parent {
     height: 1050px;
+  }
+  .wrap-search-header input {
+    font-size: 20px;
   }
 }
 @media (max-width: 568px) {
