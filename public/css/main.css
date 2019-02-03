@@ -3838,7 +3838,7 @@ RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE
     height: 950px;
   }
   .wrap-search-header input {
-    font-size: 18px;
+    font-size: 15px;
   }
   .cot_giohang{
     padding-top: 10px;
@@ -3855,7 +3855,7 @@ RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE
   }
   
   .wrap-search-header input {
-    font-size: 15px;
+    font-size: 12px;
   }
 }
 a:hover{cursor: pointer;}
