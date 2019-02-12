@@ -112,7 +112,7 @@
     /*==================================================================
     [ Show / hide modal search ]*/
     $('.js-show-modal-search').on('click', function(){
-        $('.modal-search-header').addClass('show-modal-search');
+        $('.search_product').addClass('show-modal-search');
         $(this).css('opacity','0');
     });
 
@@ -195,7 +195,11 @@
     /*==================================================================
     [ Cart ]*/
     $('.js-show-cart').on('click',function(){
-        $('.js-panel-cart').addClass('show-header-cart');
+        var soluong = $(this).attr('data-notify');
+        if(soluong > 0){
+            $('.js-panel-cart').addClass('show-header-cart');
+        }
+        
     });
 
     $('.js-hide-cart').on('click',function(){

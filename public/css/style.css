@@ -2161,3 +2161,4 @@ input[type="text"] {
     max-width: 100%;
 }
 }
+.btn:hover{cursor: pointer;}

@@ -83,7 +83,7 @@
 		<div class="logo-mobile">
 			<a href="{{route('trangchu')}}"><img src="{{asset('images/icons/logo-01.png')}}" alt="IMG-LOGO"></a>
 		</div>
-
+		
 		<!-- Icon header -->
 		<div class="wrap-icon-header flex-w flex-r-m h-full m-r-15">
 			<div class="flex-c-m h-full p-r-10">
@@ -153,7 +153,7 @@
 	</div>
 
 	<!-- Modal Search -->
-	<div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
+	<div class="modal-search-header flex-c-m trans-04 js-hide-modal-search search_product">
 		<div class="container-search-header">
 			<button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
 				<img src="{{asset('images/icons/icon-close2.png')}}" alt="CLOSE">

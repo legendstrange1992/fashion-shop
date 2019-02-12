@@ -30,6 +30,7 @@ $(function(){
     $('.quantity').on('click',function(){
         var id = $(this).attr('data-id');
         var style = $(this).attr('data-style');
+        $('.soluongmoi_modal_'+id+'_'+style).focus();
         $('.soluongmoi_modal_'+id+'_'+style).val('');
         $('.soluong_modal_'+id+'_'+style).addClass('show-modal-search');
     });
@@ -56,4 +57,14 @@ $(function(){
         })
     });
     
+    $('.delete_item_cart').on('click',function(){
+        var id = $(this).attr('data-id');
+        var style = $(this).attr('data-style');
+        $.ajax({
+            url:'',
+            success:function(data){
+
+            }
+        })
+    });
 });

@@ -127,7 +127,7 @@
 	</div>
 
 	<!-- Modal Search -->
-	<div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
+	<div class="modal-search-header flex-c-m trans-04 js-hide-modal-search search_product">
 		<div class="container-search-header">
 			<button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
 				<img src="{{asset('images/icons/icon-close2.png')}}" alt="CLOSE">
@@ -228,7 +228,7 @@
 					</div>
 					<div class="one-eight text-center cot_giohang">
 						<div class="display-tc">
-							<a href="#" class="closed"></a>
+							<a  class="closed delete_item_cart" data-id="<?php echo $v['id']?>" data-style="<?php echo $k; ?>"></a>
 						</div>
 					</div>
 				</div>
@@ -261,31 +261,31 @@
 					<div class="row">
 						
 						<div class="col-md-3 col-md-push-1 text-center total_mobile">
-							<div class="total">
+							<div class="total" style='font-weight:bold;'>
 								<div class="sub">
 									<p><span>Subtotal:</span> <span>$0.00</span></p>
 									<p><span>Delivery:</span> <span>$0.00</span></p>
 									<p><span>Discount:</span> <span>$0.00</span></p>
 								</div>
 								<div class="grand-total">
-									<p><span><strong>Total:</strong></span><span class="tongtien_giohang">$ <?php echo number_format($tongtien);?></span></p>
+									<p><span><strong>Total :</strong></span><span class="tongtien_giohang">$ <?php echo number_format($tongtien);?></span></p>
 								</div>
 							</div>
 						</div>
 						<div class="col-md-8" style='margin-bottom:20px;'>
 							<div class="row form-group row_form_group">
 								<div class="col-md-3">
-									<input type="submit" value="Apply Cart" class="btn btn-primary">
+									<a href="{{route('trangchu')}}"><input type="button" value="Continues" class="btn btn-primary"></a>
 								</div>
 							</div>
 							<div class="row form-group" style='float:left;margin-left:20px;'>
 								<div class="col-md-3">
-									<input type="submit" value="Apply Cart" class="btn btn-primary">
+									<a href="{{route('delete_cart')}}"><input type="button" value="Detele Cart" class="btn btn-primary"></a>
 								</div>
 							</div>
 							<div class="row form-group" style='float:left;margin-left:20px;'>
 								<div class="col-md-3">
-									<input type="submit" value="Apply Cart" class="btn btn-primary">
+									<a href="{{route('checkout')}}"><input type="button" value="Apply Cart" class="btn btn-primary"></a>
 								</div>
 							</div>
 						</div>

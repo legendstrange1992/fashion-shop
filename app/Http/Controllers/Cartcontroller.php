@@ -126,5 +126,21 @@ class Cartcontroller extends Controller
         $data = ['thanhtien'=>$thanhtien,'tongtien'=>$tongtien];
         return $data;
     }
-   
+    public function delete_cart(){
+        session()->forget('giohang');
+        return redirect()->route('trangchu');
+    }
+    public function delete_item_cart($id,$style){
+        $cart = session()->get('giohang');
+        unset($cart[$id][$style]);
+        session()->put('giohang',$cart);
+        
+    }
+    public function checkout(){
+        return view('pages.thongtindathang');
+    }
+    public function oder_complete(){
+        session()->forget('giohang');
+        return view('pages.dathangthanhcong');
+    }
 }
