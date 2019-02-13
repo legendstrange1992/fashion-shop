@@ -10,16 +10,17 @@
 				<a href="{{route('trangchu')}}" class="logo">
 					<img src="{{asset('images/icons/logo-01.png')}}" alt="IMG-LOGO">
 				</a>
+
 				<!-- Menu desktop -->
 				<div class="menu-desktop">
 					<ul class="main-menu">
-						<li class="active-menu">
-							<a href="{{route('trangchu')}}}">HOME</a>
+						<li>
+							<a href="{{route('trangchu')}}">HOME</a>
 						</li>
 						<?php $i = 0;?>
 						@foreach($loaisanpham as $lsp)
-						<li>
-							<a href="index.php/{{$lsp->tenloaisanpham}}">{{$lsp->tenloaisanpham}}</a>
+						<li  <?php $i++; if($i==$active_menu){ ?> class="active-menu" <?php } ?> >
+							<a href="{{$lsp->tenloaisanpham}}">{{$lsp->tenloaisanpham}}</a>
 						</li>
 						@endforeach
 					</ul>
@@ -150,13 +151,7 @@
 </header>
 @endsection
 
-@section('banner')
-	@include('layout.banner')
-@endsection
-
-@section('slider')
-	@include('layout.slider')
-@endsection		
+	
 
 <!-- Product -->	
 @section('product')
@@ -164,7 +159,7 @@
 <div class="container">
 	<div class="p-b-32">
 		<h3 class="ltext-105 cl5 txt-center respon1">
-			Store Overview
+			{{$category}}
 		</h3>
 	</div>
 
@@ -178,7 +173,7 @@
 			
 			<div class="block2">
 				<div class="block2-pic hov-img0">
-					<img src="images/{{$sp->hinh}}">
+					<img src="../images/{{$sp->hinh}}">
 
 					<a data-id_sanpham="{{$sp->id_sanpham}}"  class="quickview block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1 ">
 						Quick View
@@ -219,7 +214,7 @@
 		<div class="container">
 			<div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
 				<button class="how-pos3 hov3 trans-04 js-hide-modal1" data-id="{{$sp->id_sanpham}}">
-					<img src="images/icons/icon-close.png" alt="CLOSE">
+					<img src="{{asset('images/icons/icon-close.png')}}" alt="CLOSE">
 				</button>
 
 				<div class="row">
@@ -230,7 +225,7 @@
 								<div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
 
 								<div class="wrap-pic-w pos-relative">
-									<img class="img_modal2" src="images/{{$sp->hinh}}" alt="IMG-PRODUCT">
+									<img class="img_modal2" src="{{asset('images')}}/{{$sp->hinh}}" alt="IMG-PRODUCT">
 								</div>
 							</div>
 						</div>
@@ -304,7 +299,7 @@
 										</div>
 									</div>
 									<div class="size-204 flex-w flex-m respon6-next">
-									<button data-id="{{$sp->id_sanpham}}"  class="flex-c-m stext-101 cl0 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail addtocart" style="margin-top:10px;width:140px;height: 46px;">
+									<button data-id="{{$sp->id_sanpham}}"  class="flex-c-m stext-101 cl0 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail addtocart1" style="margin-top:10px;width:140px;height: 46px;">
 										Add to cart
 									</button>
 									</div>
