@@ -2120,6 +2120,7 @@ input[type="text"] {
   .quantity:hover{
     box-shadow: 1px 1px 3px #4cae4c;
   }
+
 @media screen and (max-width: 768px) {
   .product-cart .product-img{
     display: inline-block;
@@ -2162,3 +2163,7 @@ input[type="text"] {
 }
 }
 .btn:hover{cursor: pointer;}
+@media (max-width: 480px) {
+  .error > ul > li {font-size: xx-small;}
+  .process h3 {font-size: 8px;}
+}

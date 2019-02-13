@@ -168,7 +168,22 @@
             <div class="col7" >
                 <form method="post" action="{{route('ordercomplete')}}" class="colorlib-form">
                     {!! csrf_field() !!}
-                    <h1 style='text-align:center;'>CHECK OUT</h1>
+                    <?php
+                    if(isset($error)){
+                 	?>
+                     	<div  style='background: #FF6A6A; width: 100%; line-height: 50px;margin:auto;margin-bottom: 20px;color:white;font-weight: bold;padding: 5px 0px 20px 20px;border-radius: 10px;'>
+                    		<ul>- Error :
+                    			<?php
+                    			foreach ($error as $key) {
+                    			?>
+                    				<li class="error" style='margin-left: 20px;'> .  <?php echo $key;?></li>
+                    			<?php }?>
+                    		</ul>
+                    	</div>
+                 	<?php 
+             			}
+         			?>
+                    
                     <div class="row">
                         <div class="form-group">
                             <div class="col-md-6">

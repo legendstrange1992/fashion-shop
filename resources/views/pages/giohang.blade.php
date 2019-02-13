@@ -275,17 +275,17 @@
 						<div class="col-md-8" style='margin-bottom:20px;'>
 							<div class="row form-group row_form_group">
 								<div class="col-md-3">
-									<a href="{{route('trangchu')}}"><input type="button" value="Continues" class="btn btn-primary"></a>
+									<a href="{{route('trangchu')}}"><input style='border-radius: 25px;' type="button" value="Continues" class="btn btn-primary"></a>
 								</div>
 							</div>
 							<div class="row form-group" style='float:left;margin-left:20px;'>
 								<div class="col-md-3">
-									<a href="{{route('delete_cart')}}"><input type="button" value="Detele Cart" class="btn btn-primary"></a>
+									<a href="{{route('delete_cart')}}"><input style='border-radius: 25px;' type="button" value="Detele Cart" class="btn btn-primary"></a>
 								</div>
 							</div>
 							<div class="row form-group" style='float:left;margin-left:20px;'>
 								<div class="col-md-3">
-									<a href="{{route('checkout')}}"><input type="button" value="Apply Cart" class="btn btn-primary"></a>
+									<a href="{{route('checkout')}}"><input style='border-radius: 25px;' type="button" value="Apply Cart" class="btn btn-primary"></a>
 								</div>
 							</div>
 						</div>

@@ -3712,3 +3712,7 @@ iframe {border: none;}
 .pointer-none {
 	pointer-events: none;
 }
+li {line-height: 30px;}
+@media (max-width: 680px) {
+   li {font-size: 12px;line-height: 30px;}
+}

@@ -3837,6 +3837,7 @@ RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE
   .how-pos3-parent {
     height: 950px;
   }
+  
   .wrap-search-header input {
     font-size: 15px;
   }
@@ -3861,6 +3862,6 @@ RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE
 a:hover{cursor: pointer;}
 .quickview:hover{background: blanchedalmond;color: black;}
 .col7{
-  max-width: 70%;
+  max-width: 90%;
   margin: auto;
   }

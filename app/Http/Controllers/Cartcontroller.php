@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-//use Illuminate\Http\Request;
-use Requyest;
+use Illuminate\Http\Request;
 use App\SanPham;
+use App\Donhang;
+use App\Chitietdonhang;
+use Carbon\Carbon;
 class Cartcontroller extends Controller
 {
     public function cart(){
@@ -139,8 +141,67 @@ class Cartcontroller extends Controller
     public function checkout(){
         return view('pages.thongtindathang');
     }
-    public function oder_complete(){
-        session()->forget('giohang');
-        return view('pages.dathangthanhcong');
+    public function oder_complete(Request $req){
+        $check = true;
+        $error = array();
+        if($req->firstname == ''){
+            $check = false;
+            $error[] = "First name is not allowed to be empty" ; 
+        }
+        if($req->lastname == ''){
+            $check = false;
+            $error[] = "Lastname is not allowed to be empty" ; 
+        }
+        if($req->address == ''){
+            $check = false;
+            $error[] = "Address is not allowed to be empty" ; 
+        }
+        if($req->phonenumber == ''){
+            $check = false;
+            $error[] = "Phone number is not allowed to be empty" ; 
+        }
+        if($req->email == ''){
+            $check = false;
+            $error[] = "Email is not allowed to be empty" ; 
+        }
+        if($check==false){
+            return view('pages.thongtindathang',compact('error'));
+        }
+        else{
+            $cart = session()->get('giohang');
+            $tongtien = 0;
+            foreach ($cart as $key => $value) {
+                foreach ($value as $k => $v) {
+                    $tongtien += $v['dongia']*$v['soluong'];
+                }
+            }
+            $dt = Carbon::now('Asia/Ho_Chi_Minh');
+            $donhang = new Donhang();
+            $donhang->tenkhachhang = $req->firstname;
+            $donhang->diachi = $req->address;
+            $donhang->dienthoai = $req->phonenumber;
+            $donhang->email = $req->email;
+            $donhang->tongtien = $tongtien;
+            $donhang->ngaydathang = $dt->toDateTimeString();
+            $donhang->save();
+            $dh = Donhang::orderBy('id_donhang','desc')->first();
+            foreach ($cart as $key => $value) {
+                foreach ($value as $k => $v) {
+                    $Chitietdonhang = new Chitietdonhang();
+                    $Chitietdonhang->id_donhang = $dh->id_donhang;
+                    $Chitietdonhang->id_sanpham = $key;
+                    $Chitietdonhang->style = $k;
+                    $Chitietdonhang->tensanpham = $v['tensanpham'];
+                    $Chitietdonhang->hinh = $v['hinh'];
+                    $Chitietdonhang->soluong = $v['soluong'];
+                    $Chitietdonhang->dongia = $v['dongia'];
+                    $Chitietdonhang->thanhtien = $v['dongia'] * $v['soluong'];
+                    $Chitietdonhang->save();
+                }
+            }
+            session()->forget('giohang');
+            return view('pages.dathangthanhcong');
+        }
+        
     }
 }
