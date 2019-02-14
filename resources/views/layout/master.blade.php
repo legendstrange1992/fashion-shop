@@ -42,7 +42,7 @@
 </head>
 <body class="animsition">
 	<!-- Header -->
-	@yield('header');
+	@yield('header')
 
 	<!-- Sidebar -->
 	<aside class="wrap-sidebar js-sidebar">

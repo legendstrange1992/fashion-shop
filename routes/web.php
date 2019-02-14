@@ -20,3 +20,5 @@ Route::post('oder-complete','Cartcontroller@oder_complete')->name('ordercomplete
 Route::get('MEN','Mycontroller@men')->name('MEN');
 Route::get('WOMEN','Mycontroller@women')->name('WOMEN');
 Route::get('BAG','Mycontroller@bag')->name('BAG');
+
+Route::post('search','Mycontroller@search')->name('search');

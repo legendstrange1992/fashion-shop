@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-//use Illuminate\Http\Request;
-use Requyest;
+use Illuminate\Http\Request;
 use App\SanPham;
 use App\Loaisanpham;
 
@@ -35,6 +34,12 @@ class Mycontroller extends Controller
     	$category = 'BAG';
         $active_menu = 3;
     	return view('pages/search_product',compact('sanpham','category','loaisanpham','active_menu'));
+    }
+    public function search(Request $req){
+         $key =  $req->search;
+         $sanpham = SanPham::where('tensanpham','like',"%$key%")->get()->toArray();
+         echo '<pre>';
+         print_r($sanpham); 
     }
     
 }

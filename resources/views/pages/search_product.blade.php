@@ -1,6 +1,7 @@
 @extends('layout.master')
+
 @section('header')
-<header class="header-v2">
+<header class="header-v2"  style='border-bottom: 0.5px solid #DDDDDD;'>
 	<!-- Header desktop -->
 	<div class="container-menu-desktop trans-03">
 		<div class="wrap-menu-desktop">
@@ -100,11 +101,17 @@
 	<div class="menu-mobile">
 		<ul class="main-menu-m">
 			<li>
-				<a href="index.html">Home</a>
+				<a href="{{route('trangchu')}}">Home</a>
+			</li>
+			<li>
+				<a href="index.html">Category</a>
 				<ul class="sub-menu-m">
-					<li><a href="index.html">Homepage 1</a></li>
-					<li><a href="home-02.html">Homepage 2</a></li>
-					<li><a href="home-03.html">Homepage 3</a></li>
+					<?php $i = 0;?>
+					@foreach($loaisanpham as $lsp)
+					<li>
+						<a href="{{$lsp->tenloaisanpham}}">{{$lsp->tenloaisanpham}}</a>
+					</li>
+					@endforeach
 				</ul>
 				<span class="arrow-main-menu-m">
 					<i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -112,23 +119,7 @@
 			</li>
 
 			<li>
-				<a href="product.html">Shop</a>
-			</li>
-
-			<li>
-				<a href="shoping-cart.html" class="label1 rs1" data-label1="hot">Features</a>
-			</li>
-
-			<li>
-				<a href="blog.html">Blog</a>
-			</li>
-
-			<li>
-				<a href="about.html">About</a>
-			</li>
-
-			<li>
-				<a href="contact.html">Contact</a>
+				<a>Contact</a>
 			</li>
 		</ul>
 	</div>
