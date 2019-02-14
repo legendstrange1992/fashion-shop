@@ -19,27 +19,29 @@ class Mycontroller extends Controller
         $loaisanpham  = Loaisanpham::all();
     	$category = 'MEN';
         $active_menu = 1;
-    	return view('pages/search_product',compact('sanpham','category','loaisanpham','active_menu'));
+    	return view('pages/search_category',compact('sanpham','category','loaisanpham','active_menu'));
     }
     public function women(){
     	$sanpham = SanPham::where('id_theloai',2)->get();
         $loaisanpham  = Loaisanpham::all();
     	$category = 'WOMEN';
         $active_menu = 2;
-    	return view('pages/search_product',compact('sanpham','category','loaisanpham','active_menu'));
+    	return view('pages/search_category',compact('sanpham','category','loaisanpham','active_menu'));
     }
     public function bag(){
     	$sanpham = SanPham::where('id_theloai',3)->get();
         $loaisanpham  = Loaisanpham::all();
     	$category = 'BAG';
         $active_menu = 3;
-    	return view('pages/search_product',compact('sanpham','category','loaisanpham','active_menu'));
+    	return view('pages/search_category',compact('sanpham','category','loaisanpham','active_menu'));
     }
     public function search(Request $req){
-         $key =  $req->search;
-         $sanpham = SanPham::where('tensanpham','like',"%$key%")->get()->toArray();
-         echo '<pre>';
-         print_r($sanpham); 
+        $key =  $req->search;
+        $sanpham = SanPham::where('tensanpham_khongdau','like',"%$key%")->get();
+        $loaisanpham  = Loaisanpham::all();
+        $active_menu = 4;
+        return view('pages/search_product',compact('sanpham','loaisanpham','active_menu'));
+          
     }
     
 }

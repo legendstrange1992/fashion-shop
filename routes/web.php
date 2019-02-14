@@ -22,3 +22,5 @@ Route::get('WOMEN','Mycontroller@women')->name('WOMEN');
 Route::get('BAG','Mycontroller@bag')->name('BAG');
 
 Route::post('search','Mycontroller@search')->name('search');
+
+

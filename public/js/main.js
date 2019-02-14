@@ -113,7 +113,9 @@
     [ Show / hide modal search ]*/
     $('.js-show-modal-search').on('click', function(){
         $('.search_product').addClass('show-modal-search');
+        $('.plh3').focus();
         $(this).css('opacity','0');
+
     });
 
     $('.js-hide-modal-search').on('click', function(){
