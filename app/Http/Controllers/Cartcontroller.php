@@ -230,9 +230,83 @@ class Cartcontroller extends Controller
     }
     public function delete_item_cart($id,$style){
         $cart = session()->get('giohang');
-        unset($cart[$id][$style]);
-        session()->put('giohang',$cart);
-        
+        if(count($cart[$id]) == 1){
+            unset($cart[$id]);
+            session()->put('giohang',$cart);
+        }
+        else{
+            unset($cart[$id][$style]);
+            session()->put('giohang',$cart);
+        }
+        $data = session()->get('giohang');
+        if(count($data)==0){
+            return "null";
+        }
+        $html = "<div class='product-name'>".
+            "<div class='one-forth text-center'>".
+                "<span>Product Details</span>".
+            "</div>".
+            "<div class='one-eight text-center'>".
+               " <span>Price</span>".
+            "</div>".
+            "<div class='one-eight text-center'>".
+                "<span>Quantity</span>".
+            "</div>".
+            "<div class='one-eight text-center'>".
+                "<span>Total</span>".
+            "</div>".
+            "<div class='one-eight text-center'>".
+               " <span>Remove</span>".
+            "</div>".
+        "</div>";
+        foreach ($data as $key => $value) {
+            foreach ($value as $k => $v) {
+                $html.= "<div class='product-cart'>".
+                    "<div class='one-forth' style='padding-left:2%;'>".
+                        "<div class='product-img' style='background-image: url(../images/".$v['hinh'].");'>".
+                        "</div>".
+                        "<div class='display-tc'>".
+                            "<h3>".$v['tensanpham']." (". ($k).")</h3>".
+                        "</div>".
+                    "</div>".
+                    "<div class='one-eight text-center cot_giohang'>".
+                        "<div class='display-tc'>".
+                            "<span class='price'>$ ".$v['dongia']."</span>".
+                        "</div>".
+                    "</div>".
+                    "<div class='one-eight text-center'>".
+                        "<div class='display-tc' style='text-align: center;'>".
+                            "<input type='button' id='quantity' name='quantity' class='form-control input-number text-center quantity soluong_".$v['id']."_".$k."'".
+                            "value='".$v['soluong']."' data-id='".$v['id']."' data-style='".$k."' style='width:40px;'>".
+                        "</div>".
+                    "</div>".
+                    "<div class='one-eight text-center cot_giohang'>".
+                        "<div class='display-tc'>".
+                            "<span class='price thanhtien_".$v['id']."_".$k."'>$ ".number_format($v['dongia']*$v['soluong'])."</span>
+                        </div>".
+                    "</div>".
+                    "<div class='one-eight text-center cot_giohang'>".
+                        "<div class='display-tc'>".
+                            "<a  class='closed delete_item_cart' data-id='".$v['id']."' data-style='".$k."'></a>".
+                        "</div>".
+                    "</div>".
+                "</div>".
+                "<div class='modal-search-header flex-c-m trans-04 soluong_modal_".$v['id']."_".$k."'>".
+                    "<div class='container-search-header'>".
+                        "<button class='flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search'>".
+                            "<img src='../images/icons/icon-close2.png' alt='CLOSE'>".
+                        "</button>".
+                        "<div class='wrap-search-header flex-w p-l-15'>".
+                            "<input class='plh3 soluongmoi_modal_".$v['id']."_".$k."' type='text' name='search' placeholder='Mời nhập số lượng (tối đa 100)' autocomplete='off' maxlength='3' onkeypress='return isNumberKey(event)'>".
+                            "<button class='flex-c-m trans-04 update_soluong' data-id='".$v['id']."' data-style='".$k."'>".
+                                "<i class='fas fa-arrow-alt-circle-right'></i>".
+                            "</button>".
+                        "</div>".
+                    "</div>".
+                "</div>";
+            }
+        }
+        return $html;
     }
     public function checkout(){
         $loaisanpham = Loaisanpham::all();

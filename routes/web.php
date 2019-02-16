@@ -24,3 +24,9 @@ Route::get('BAG','Mycontroller@bag')->name('BAG');
 Route::post('search','Mycontroller@search')->name('search');
 
 
+
+Route::get('admin','Admin_Controller@admin')->name('admin');
+
+Route::get('test',function(){
+	return view('test');
+});

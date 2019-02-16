@@ -134,8 +134,19 @@
 				</div>
 			</div>
 		</div>
+		<script>
+			function isNumberKey(evt)
+			{
+			var charCode = (evt.which) ? evt.which : event.keyCode;
+			if(charCode == 59 || charCode == 46)
+				return true;
+			if (charCode > 31 && (charCode < 48 || charCode > 57))
+				return false;
+			return true;
+			}
+		</script>
 		<div class="row row-pb-md">
-			<div class="col-md-10 col-md-offset-1">
+			<div class="col-md-10 col-md-offset-1 table_giohang">
 				<div class="product-name">
 					<div class="one-forth text-center">
 						<span>Product Details</span>
@@ -153,21 +164,9 @@
 						<span>Remove</span>
 					</div>
                 </div>
-				<script>
-					function isNumberKey(evt)
-					{
-					var charCode = (evt.which) ? evt.which : event.keyCode;
-					if(charCode == 59 || charCode == 46)
-						return true;
-					if (charCode > 31 && (charCode < 48 || charCode > 57))
-						return false;
-					return true;
-					}
-				</script>
                 <?php
 				$tongtien = 0;
                 if(isset($cart)){
-					
                     foreach($cart as $key => $value){
                         foreach($value as $k => $v){
 							$tongtien += $v['dongia']*$v['soluong'];
@@ -225,6 +224,7 @@
 				
 			</div>
 		</div>
+		</script>
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
 				<div class="total-wrap">

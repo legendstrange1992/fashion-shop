@@ -27,14 +27,9 @@ $(function(){
             }
         });
     });
-    $('.quantity').on('click',function(){
-        var id = $(this).attr('data-id');
-        var style = $(this).attr('data-style');
-        $('.soluongmoi_modal_'+id+'_'+style).focus();
-        $('.soluongmoi_modal_'+id+'_'+style).val('');
-        $('.soluong_modal_'+id+'_'+style).addClass('show-modal-search');
-    });
-    $('.update_soluong').on('click',function(){
+    
+    function update_soluong(){
+        $('.update_soluong').on('click',function(){
         const JPY = value => currency(value, { precision: 0, symbol: '¥' });
         var id = $(this).attr('data-id');
         var style = $(this).attr('data-style');
@@ -54,17 +49,41 @@ $(function(){
                 $('.thanhtien_'+id+'_'+style).text('$ '+JPY(data.thanhtien).format());
                 $('.tongtien_giohang').text('$ '+ JPY(data.tongtien).format());
             }
-        })
+        });
     });
-    
-    $('.delete_item_cart').on('click',function(){
+    }
+
+    function quantity_new(){
+        $('.quantity').on('click',function(){
+            var id = $(this).attr('data-id');
+            var style = $(this).attr('data-style');
+            $('.soluongmoi_modal_'+id+'_'+style).focus();
+            $('.soluongmoi_modal_'+id+'_'+style).val('');
+            $('.soluong_modal_'+id+'_'+style).addClass('show-modal-search');
+        });
+    }
+    function delete_item_cart(){
+        $('.delete_item_cart').on('click',function(){
         var id = $(this).attr('data-id');
         var style = $(this).attr('data-style');
         $.ajax({
-            url:'',
+            url:'delete-item-cart/'+id+'/'+style,
             success:function(data){
-
-            }
-        })
-    });
+                    if(data=='null'){
+                        window.location = './';
+                    }
+                    else{
+                        $('.table_giohang').html(data);
+                        quantity_new();
+                        delete_item_cart();
+                        update_soluong();
+                    }
+                }
+            });
+        });
+    }
+    delete_item_cart();
+    quantity_new();
+    update_soluong();
+    
 });
