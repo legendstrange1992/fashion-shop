@@ -1,5 +1,7 @@
 <?php
+Auth::routes();
 
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/','Mycontroller@index')->name('trangchu');
 
@@ -26,7 +28,8 @@ Route::post('search','Mycontroller@search')->name('search');
 
 
 Route::get('admin','Admin_Controller@admin')->name('admin');
+Route::post('login-admin','Mycontroller@login_admin')->name('login_admin');
+Route::get('logout','Admin_Controller@logout')->name('logout');
 
-Route::get('test',function(){
-	return view('test');
-});
+
+

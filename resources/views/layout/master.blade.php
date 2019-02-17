@@ -38,6 +38,8 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
 	<script src="{{asset('js/jquery-3.3.1.js')}}"></script>
 	<script src="{{asset('js/currency.min.js')}}"></script>
+	<link rel="stylesheet" type="text/css" href="{{asset('login_v1/css/main.css')}}">
+
 <!--===============================================================================================-->
 </head>
 <body class="animsition">
@@ -310,8 +312,8 @@
 						</li>
 
 						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Login
+							<a class="stext-107 cl7 hov-cl1 trans-04 login">
+								<span style="color:#CCC;">Login</span>
 							</a>
 						</li>
 					</ul>
@@ -402,6 +404,62 @@
 		<span class="symbol-btn-back-to-top">
 			<i class="zmdi zmdi-chevron-up"></i>
 		</span>
+	</div>
+	<!-- Login Modal -->
+	<div class="modal-search-header flex-c-m trans-04 js-hide-modal-search login_modal" style="width: 100%;">
+		<div class="container-search-header">
+			<button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
+				<img src="{{asset('images/icons/icon-close2.png')}}" alt="CLOSE">
+			</button>
+
+			<form class="flex-w p-l-15" style="height: auto;border-radius: 10px;padding: 20px;" action="{{route('login_admin')}}" method='post'>
+				{{  csrf_field() }}
+				
+				<div class="wrap-login100" style="box-shadow: 1px 1px 10px black;">
+					<div class="login_trai">
+						<div class="login100-pic js-tilt" data-tilt>
+							<img src="http://localhost:8080/shop_fashion/public/login_v1/images/img-01.png" alt="IMG">
+						</div>
+					</div>
+					<div class="login_phai">
+						<div class="login100-form validate-form">
+							<span class="login100-form-title">
+								Admin Login
+							</span>
+
+							<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+								<input class="input100" autocomplete="off" type="text" name="email" placeholder="Username">
+								<span class="focus-input100"></span>
+								<span class="symbol-input100">
+									<i class="fas fa-user"></i>
+								</span>
+							</div>
+
+							<div class="wrap-input100 validate-input" data-validate = "Password is required">
+								<input class="input100" autocomplete="off" type="password" name="password" placeholder="Password">
+								<span class="focus-input100"></span>
+								<span class="symbol-input100">
+									<i class="fa fa-lock" aria-hidden="true"></i>
+								</span>
+							</div>
+							
+							<div class="container-login100-form-btn">
+								<input type="submit" class="login100-form-btn" value="Login">
+							</div>
+
+							<div class="text-center p-t-12">
+								<span class="txt1">
+									Forgot
+								</span>
+								<a class="txt2" href="#">
+									Username / Password?
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
 	</div>
 
 	

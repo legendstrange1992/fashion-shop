@@ -138,6 +138,7 @@
             <div class="col-md-10 col-md-offset-1 text-center">
                 <span class="icon"><i class="fas fa-shopping-cart"></i></span>
                 <h2>Thank you for purchasing, Your order is complete</h2>
+                <br>
                 <p>
                     <a href="{{route('trangchu')}}"class="btn btn-primary btn-outline">Continue Shopping</a>
                 </p>

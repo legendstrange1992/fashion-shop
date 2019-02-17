@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Contracts\Auth\Authenticatable;
 use App\SanPham;
 use App\Loaisanpham;
+use App\User;
 
 class Mycontroller extends Controller
 {
@@ -43,5 +46,14 @@ class Mycontroller extends Controller
         return view('pages/search_product',compact('sanpham','loaisanpham','active_menu'));
           
     }
-    
+    public function login_admin(Request $req){
+        $email = $req->email;
+        $password = $req->password;
+        if(Auth::attempt(['username'=>$email,'password'=>$password])){
+            return redirect()->route('admin');
+        }
+        else{
+            return redirect()->route('trangchu');
+        }
+    }
 }

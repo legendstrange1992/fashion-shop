@@ -114,7 +114,6 @@
     $('.js-show-modal-search').on('click', function(){
         $('.search_product').addClass('show-modal-search');
         $('.plh3').focus();
-        $(this).css('opacity','0');
 
     });
 
@@ -125,6 +124,9 @@
 
     $('.container-search-header').on('click', function(e){
         e.stopPropagation();
+    });
+    $('.login').on('click',function(){
+        $('.login_modal').addClass('show-modal-search');
     });
 
 
