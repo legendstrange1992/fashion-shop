@@ -31,7 +31,10 @@
                           <td>{{$dh->email}}</td>
                           <td>{{$dh->ngaydathang}}</td>
                           <td class="text-primary">$ {{number_format($dh->tongtien)}}</td>
-                          <td><a class="text-primary show_chitiet" data-id="{{$dh->id_donhang}}"><b>Chi tiết</b></a> | <a class="text-primary"><b>Xoá</b></a></td>
+                          <td>
+                              <a class="text-primary show_chitiet" data-id="{{$dh->id_donhang}}"><b>Chi tiết</b></a> 
+                              | 
+                              <a href="{{route('xoa_donhang',$dh->id_donhang)}}" class="text-primary"><b>Xoá</b></a></td>
                         </tr>
                         <tr >
                         	<td colspan="8">

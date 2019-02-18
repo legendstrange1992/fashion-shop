@@ -32,5 +32,7 @@ Route::post('login-admin','Mycontroller@login_admin')->name('login_admin');
 Route::get('logout','Admin_Controller@logout')->name('logout');
 Route::get('chi-tiet-don-hang/{id_donhang}','Admin_Controller@chitiet_donhang');
 
+Route::get('xoa-don-hang/{id_donhang}','Admin_Controller@xoa_donhang')->name('xoa_donhang');
+
 
 

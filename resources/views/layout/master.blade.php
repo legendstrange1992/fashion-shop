@@ -390,7 +390,7 @@
 				</div>
 
 				<p class="stext-107 cl6 txt-center">
- 	Design by : <a href="http://itc.edu.vn/" target="_blank">Student of College  Công Nghệ Thông Tin TP.HCM</a>
+ 	Địa Chỉ : <a href="http://itc.edu.vn/" target="_blank">12 Trịnh Đình Thảo, Hòa Thạnh, Tân Phú, TP.HCM</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 
 				</p>

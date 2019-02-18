@@ -57,5 +57,9 @@ class Admin_Controller extends Controller
 		"</table>";
 		return $html;
     }
+    public function xoa_donhang($id_donhang){
+    	DB::table('donhang')->where('id_donhang',$id_donhang)->delete();
+    	return redirect()->route('admin');
+    }
 
 }
