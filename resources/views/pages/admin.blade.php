@@ -36,42 +36,7 @@
                         <tr >
                         	<td colspan="8">
                         		<div class="chitiet_donhang{{$dh->id_donhang}} chitiet_donhang" style="display: none;width: 100%;height: auto;border-radius: 5px;padding: 20px; background: white;box-shadow:0px 0px 5px blue;">
-                        			<h2 class="card-title text-primary text-center"><b>ĐƠN HÀNG : {{$dh->id_donhang}}</b></h2>
-                        			<table class="table" style="background:white;text-align: center; ">
-    						              	<thead class=" text-primary">
-    						                	<th>ID Sản Phẩm</th>
-    						                	<th>Ảnh</th>
-    						                	<th>Tên Sản Phẩm</th>
-    						                	<th>Color - Size</th>
-    						                	<th>Số Lượng</th>
-    						                	<th>Đơn Giá</th>
-    						                	<th>Thành Tiền</th>
-    					              		</thead>
-            										<tbody>
-            											@foreach($chitietdonhang  as $ctdh)
-            											<tr>
-            												<td>{{$ctdh->id_sanpham}}</td>
-            												<td><img src="{{asset('images')}}/{{$ctdh->hinh}}" width="60px" height="70px" alt=""></td>
-            												<td>{{$ctdh->tensanpham}}</td>
-            												<td>{{$ctdh->style}}</td>
-            												<td>{{$ctdh->soluong}}</td>
-            												<td><b>$ {{number_format($ctdh->dongia)}}</b></td>
-            												<td><b>$ {{number_format($ctdh->thanhtien)}}</b></td>
-            											</tr>
-            											@endforeach
-            											<tr>
-            												<td colspan="5"></td>
-            												<td><b><span style="color:red;font-weight: bold;">Tổng tiền : $ <?php 
-            													$tongthanhtien = 0;
-            													foreach ($chitietdonhang as $key => $value) {
-            														$tongthanhtien += $value->thanhtien;
-            													}
-            													echo number_format($tongthanhtien);
-            												?></span></b></td>
-            												<td><input type="button" data-id="{{$dh->id_donhang}}" class="btn_dong" value="Đóng"></td>
-            											</tr>
-            										</tbody>
-            									</table>
+                        			
                         		</div>
                         	</td>
                         </tr>
