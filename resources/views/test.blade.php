@@ -1,0 +1,1 @@
+{{ isset($ten) ? $ten : 'Default' }}

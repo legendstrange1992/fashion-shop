@@ -157,12 +157,8 @@
                     <div class="row">
                         <div class="form-group">
                             <div class="col-md-6">
-                                <label for="fname">First Name</label>
-                                <input type="text" name="firstname" class="form-control" autocomplete='off' placeholder="Your first name">
-                            </div>
-                            <div class="col-md-6" style='padding-top:10px;'>
-                                <label for="lname">Last Name</label>
-                                <input type="text" name="lastname" class="form-control" autocomplete='off' placeholder="Your last name">
+                                <label for="fname">Full Name</label>
+                                <input type="text" name="fullname" class="form-control" autocomplete='off' placeholder="Your full name">
                             </div>
                         </div>
                         <div class="col-md-12">

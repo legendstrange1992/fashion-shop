@@ -50,15 +50,15 @@
             </a>
           </li>
           <li class="nav-item active ">
-            <a class="nav-link" href="./tables.html">
+            <a class="nav-link" href="{{route('admin')}}">
               <i class="material-icons">content_paste</i>
               <p>Quản Lý Đơn Hàng</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./typography.html">
+            <a class="nav-link" href="{{route('upload_sanpham')}}">
               <i class="material-icons">library_books</i>
-              <p>Typography</p>
+              <p>Thêm Mới Sản Phẩm</p>
             </a>
           </li>
           <li class="nav-item ">

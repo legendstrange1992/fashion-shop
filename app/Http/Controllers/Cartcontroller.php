@@ -316,13 +316,9 @@ class Cartcontroller extends Controller
         $loaisanpham = Loaisanpham::all();
         $check = true;
         $error = array();
-        if($req->firstname == ''){
+        if($req->fullname == ''){
             $check = false;
-            $error[] = "First name is not allowed to be empty" ; 
-        }
-        if($req->lastname == ''){
-            $check = false;
-            $error[] = "Lastname is not allowed to be empty" ; 
+            $error[] = "Full name is not allowed to be empty" ; 
         }
         if($req->address == ''){
             $check = false;
@@ -349,7 +345,7 @@ class Cartcontroller extends Controller
             }
             $dt = Carbon::now('Asia/Ho_Chi_Minh');
             $donhang = new Donhang();
-            $donhang->tenkhachhang = $req->firstname;
+            $donhang->tenkhachhang = $req->fullname;
             $donhang->diachi = $req->address;
             $donhang->dienthoai = $req->phonenumber;
             $donhang->email = $req->email;
