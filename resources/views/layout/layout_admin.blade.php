@@ -17,6 +17,7 @@
   <link href="{{asset('assets/css/material-dashboard.css?v=2.1.1')}}" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="{{asset('assets/demo/demo.css')}}" rel="stylesheet" />
+  <script src="js/jquery-3.3.1.js"></script>
   <style>
     a:hover{cursor: pointer;}
   </style>
@@ -49,24 +50,25 @@
               <p>User Profile</p>
             </a>
           </li>
-          <li class="nav-item active ">
+          <li class="nav-item <?php if(isset($active_admin)){echo 'active';} ?> ">
             <a class="nav-link" href="{{route('admin')}}">
               <i class="material-icons">content_paste</i>
               <p>Quản Lý Đơn Hàng</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item <?php if(isset($active_sanpham)){echo 'active';} ?>">
+            <a class="nav-link" href="{{route('product')}}">
+              <i class="material-icons">content_paste</i>
+              <p>Quản Lý Sản Phẩm</p>
+            </a>
+          </li>
+          <li class="nav-item <?php if(isset($active_upload_sanpham)){echo 'active';} ?>">
             <a class="nav-link" href="{{route('upload_sanpham')}}">
               <i class="material-icons">library_books</i>
               <p>Thêm Mới Sản Phẩm</p>
             </a>
           </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./icons.html">
-              <i class="material-icons">bubble_chart</i>
-              <p>Icons</p>
-            </a>
-          </li>
+          
           <li class="nav-item ">
             <a class="nav-link" href="./map.html">
               <i class="material-icons">location_ons</i>
@@ -215,8 +217,6 @@
   <script src="{{asset('assets/js/plugins/sweetalert2.js')}}"></script>
   <!-- Forms Validations Plugin -->
   <script src="{{asset('assets/js/plugins/jquery.validate.min.js')}}"></script>
-  <!-- Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
-  <script src="{{asset('assets/js/plugins/jquery.bootstrap-wizard.js')}}"></script>
   <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
   <script src="{{asset('assets/js/plugins/bootstrap-selectpicker.js')}}"></script>
   <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
@@ -238,7 +238,6 @@
   <!-- Library for adding dinamically elements -->
   <script src="{{asset('assets/js/plugins/arrive.min.js')}}"></script>
   <!--  Google Maps Plugin    -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
   <!-- Chartist JS -->
   <script src="{{asset('assets/js/plugins/chartist.min.js')}}"></script>
   <!--  Notifications Plugin    -->
@@ -419,6 +418,7 @@
       });
     });
   </script>
+  <script src="{{asset('js')}}/upload_file.js"></script>
 </body>
 
 </html>

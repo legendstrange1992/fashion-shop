@@ -418,7 +418,7 @@
 				<div class="wrap-login100" style="box-shadow: 1px 1px 10px black;">
 					<div class="login_trai">
 						<div class="login100-pic js-tilt" data-tilt>
-							<img src="http://localhost:8080/shop_fashion/public/login_v1/images/img-01.png" alt="IMG">
+							<img src="{{asset('login_v1')}}/images/img-01.png" alt="IMG">
 						</div>
 					</div>
 					<div class="login_phai">

@@ -403,7 +403,9 @@ html {
     max-width: 50%;
   }
   .col-md-7 {
-   
+    -ms-flex: 0 0 58.333333%;
+        flex: 0 0 58.333333%;
+    max-width: 58.333333%;
   }
   .col-md-8 {
     -ms-flex: 0 0 66.666667%;
@@ -418,7 +420,7 @@ html {
   .col-md-10 {
     -ms-flex: 0 0 83.333333%;
         flex: 0 0 83.333333%;
-    max-width: 100%;
+    max-width: 83.333333%;
   }
   .col-md-11 {
     -ms-flex: 0 0 91.666667%;
@@ -1348,5 +1350,4 @@ html {
         align-self: stretch !important;
   }
 }
-
-
+/*# sourceMappingURL=bootstrap-grid.css.map */
